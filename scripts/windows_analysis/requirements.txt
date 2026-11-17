@@ -1,0 +1,9 @@
+# Analysis-worker direct dependencies. API/framework dependencies are unchanged.
+# CTranslate2 4.6 imports pkg_resources, removed by newer setuptools releases.
+setuptools==80.9.0
+scenedetect-headless==0.7.1
+opencv-python-headless==4.12.0.88
+numpy==2.2.6
+faster-whisper==1.2.0
+ctranslate2==4.6.0
+requests==2.32.5

@@ -1,0 +1,6 @@
+FROM capcut-mate-local:scenedetect-0.7.1
+RUN uv pip install --python /app/.venv/bin/python "python-multipart>=0.0.20"
+COPY src/router/video_analysis.py /app/src/router/video_analysis.py
+COPY src/service/video_analysis/video_upload.py /app/src/service/video_analysis/video_upload.py
+COPY src/service/video_analysis/splitting.py /app/src/service/video_analysis/splitting.py
+COPY src/service/video_analysis/semantic_analysis.py /app/src/service/video_analysis/semantic_analysis.py

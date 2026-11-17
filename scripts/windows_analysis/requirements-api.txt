@@ -1,0 +1,4 @@
+# API-side online model dependencies; not installed in the media worker.
+PyMySQL>=1.1,<2
+cryptography>=43
+python-dotenv>=1,<2

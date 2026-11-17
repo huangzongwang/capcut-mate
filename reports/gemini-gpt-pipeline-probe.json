@@ -1,0 +1,394 @@
+{
+  "fallbacks": [
+    {
+      "purpose": "scene",
+      "scene_index": 1,
+      "from_model_id": 41,
+      "to_model_id": 31,
+      "reason": "HTTPError",
+      "succeeded": true
+    },
+    {
+      "purpose": "global",
+      "from_model_id": 16,
+      "to_model_id": 13,
+      "reason": "HTTPError",
+      "succeeded": true
+    }
+  ],
+  "global_model_used_id": 13,
+  "detection": {
+    "detector": "prepared_clip_probe",
+    "threshold": 0.0,
+    "min_scene_len": 1,
+    "fps": 24.0,
+    "frame_count": 361,
+    "duration_us": 15041667,
+    "scene_count": 1,
+    "scenes": [
+      {
+        "index": 1,
+        "start_frame": 0,
+        "end_frame": 361,
+        "start_us": 0,
+        "end_us": 15041667,
+        "duration_us": 15041667,
+        "start_timecode": "0",
+        "end_timecode": "15.041667"
+      }
+    ],
+    "warnings": [
+      "Live probe: detection/splitting bypassed; input is one prepared clip."
+    ],
+    "settings": {},
+    "diagnostics": []
+  },
+  "transcript": null,
+  "visual_features": [],
+  "semantics": [
+    {
+      "model_id": 31,
+      "fallback_used": true,
+      "analysis_status": "completed",
+      "analysis_source": "video_model",
+      "content": "一位女主持人站在药房背景前，双手拿着一款绿色包装的奥利司他胶囊，向镜头介绍产品并展示包装特写。",
+      "hook_score": 75.0,
+      "hook_reason": "主持人开场直接切入减肥痛点和有效产品，语速稳定，展示产品包装清晰，具有较好的吸引力。",
+      "transition_type": "opening",
+      "transition_reason": "视频起始的第一个镜头，无上一镜。",
+      "continuity_score": null,
+      "scene_index": 1,
+      "scene_category": "oral_delivery",
+      "people": [
+        "女主持人"
+      ],
+      "products": [
+        "奥利司他胶囊"
+      ],
+      "scene_type": "indoor",
+      "shot_type": "medium_shot",
+      "camera_motion": "static",
+      "ocr_text": [],
+      "semantic_confidence": 0.95,
+      "replaceable": false,
+      "replace_reason": "该镜头为标准人物口播讲解画面，包含主持人介绍产品和展示产品的动作与语音同步，属于核心口播内容，不可替换。",
+      "replace_score": 0.1,
+      "replacement_type": "不可替换",
+      "actions": [
+        "拿产品",
+        "介绍产品",
+        "微笑",
+        "指向产品包装"
+      ],
+      "emotions": [
+        "自信",
+        "热情",
+        "专业"
+      ],
+      "clothing": [
+        "白色短袖上衣"
+      ],
+      "environment": [
+        "药房",
+        "药架背景"
+      ],
+      "lighting": "bright, indoor studio lighting",
+      "composition": "centered, medium shot",
+      "camera_angle": "eye_level",
+      "dialogue": "大家好，今天我要给大家介绍一款非常有效的减肥产品，它是一种非处方药，通过抑制脂肪吸收来帮助减肥。看这包装，采用绿色设计，中间是产品名称，纸质代表它能帮您轻松减重。使用方法很简单，每天三次，饭前服用，想聊更多欢迎咨询，谢谢。",
+      "dialogue_inferred": false
+    }
+  ],
+  "transitions": [],
+  "viral_analysis": {
+    "analysis_source": "video_model",
+    "analysis_status": "completed",
+    "hook_scenes": [
+      1
+    ],
+    "reasons": [
+      "分镜 1: 主持人开场直接切入减肥痛点和有效产品，语速稳定，展示产品包装清晰，具有较好的吸引力。"
+    ],
+    "score": 75.0,
+    "scene_scores": {
+      "1": 75.0
+    }
+  },
+  "scene_captions": [
+    {
+      "scene_index": 1,
+      "start_us": 0,
+      "end_us": 15041667,
+      "full_text": "",
+      "items": []
+    }
+  ],
+  "scene_model_id": 41,
+  "global_model_id": 16,
+  "models_used": {
+    "scene": {
+      "id": 41,
+      "provider_id": 10,
+      "model": "gemini-3.5-flash-lite",
+      "provider": "zetarouter_gemini",
+      "model_updated_at": "2026-10-29 17:03:11",
+      "provider_updated_at": "2026-10-29 17:03:11",
+      "revision": "bd387377b65a2062c619081e28bc333ebaea5fc6ce877b1f5004ca8e4423d9cf",
+      "calls": [
+        {
+          "call_id": "de8769af545c488e869b97bd17f7dd48",
+          "model_id": 41,
+          "provider_id": 10,
+          "model": "gemini-3.5-flash-lite",
+          "task_id": null,
+          "purpose": "scene",
+          "operation": "scene",
+          "scene_index": 1,
+          "protocol": "gemini",
+          "attempt": 1,
+          "outcome": "failed",
+          "seconds": 10.015
+        }
+      ]
+    },
+    "global": {
+      "id": 16,
+      "provider_id": 1,
+      "model": "gpt-5.5",
+      "provider": "openai",
+      "model_updated_at": "2026-10-14 14:28:31",
+      "provider_updated_at": "2026-10-12 11:47:54",
+      "revision": "6f0e4ea6471d0cd7aaee53d6a04a8f019fa0168642d1b805fbbb08c75b7eaf95",
+      "calls": [
+        {
+          "model_id": 16,
+          "provider_id": 1,
+          "task_id": null,
+          "purpose": "global",
+          "operation": "global",
+          "scene_index": null,
+          "call_id": "4330da2d762b4a1eaa8f964d32d2968f",
+          "model": "gpt-5.5",
+          "attempt": 1,
+          "outcome": "HTTPError",
+          "seconds": 0.625,
+          "first_event_seconds": null,
+          "first_text_seconds": null,
+          "response_id": null,
+          "usage": {},
+          "last_event_type": null
+        }
+      ]
+    },
+    "scene_fallback": {
+      "id": 31,
+      "provider_id": 10,
+      "model": "gemini-2.5-flash-lite",
+      "provider": "zetarouter_gemini",
+      "model_updated_at": "2026-10-29 17:03:11",
+      "provider_updated_at": "2026-10-29 17:03:11",
+      "revision": "0a3eec3f3839d0bcc3f49ca562413f4638638c132cfe9d26e9de0a191c7f794f",
+      "calls": [
+        {
+          "call_id": "f2c85d8d93944b4c90c22dd4650a40f9",
+          "model_id": 31,
+          "provider_id": 10,
+          "model": "gemini-2.5-flash-lite",
+          "task_id": null,
+          "purpose": "scene",
+          "operation": "scene",
+          "scene_index": 1,
+          "protocol": "gemini",
+          "attempt": 1,
+          "outcome": "completed",
+          "usage": {
+            "promptTokenCount": 1923,
+            "candidatesTokenCount": 504,
+            "totalTokenCount": 2427
+          },
+          "response_id": "mRHjaoG9HOLfytMP5NyR0Ac",
+          "seconds": 8.485
+        }
+      ]
+    },
+    "global_fallback": {
+      "id": 13,
+      "provider_id": 4,
+      "model": "deepseek-v4-pro-ga-260813",
+      "provider": "volcengine",
+      "model_updated_at": "2026-10-15 16:31:29",
+      "provider_updated_at": "2026-10-15 16:31:29",
+      "revision": "933a05b7e5b917d716f023b4c9d30cde3b861adeb48243125d30a9dfef9c37c8",
+      "calls": [
+        {
+          "model_id": 13,
+          "provider_id": 4,
+          "task_id": null,
+          "purpose": "global",
+          "operation": "global",
+          "scene_index": null,
+          "call_id": "678d9d6dc9664b74833588dcc22e6797",
+          "model": "deepseek-v4-pro-ga-260813",
+          "attempt": 1,
+          "outcome": "completed",
+          "seconds": 96.765,
+          "first_event_seconds": 1.609,
+          "first_text_seconds": 88.953,
+          "response_id": "resp_0217932660763661671218e8484143d9389dc42eb9b9f1f7fe651",
+          "usage": {
+            "input_tokens": 732,
+            "output_tokens": 6752,
+            "total_tokens": 7484,
+            "input_tokens_details": {
+              "cached_tokens": 0
+            },
+            "output_tokens_details": {
+              "reasoning_tokens": 5890
+            }
+          },
+          "last_event_type": "response.completed"
+        }
+      ]
+    }
+  },
+  "model_used": "gemini-3.5-flash-lite",
+  "analysis_report": {
+    "report_version": "2.0",
+    "input_mode": "gemini_inline_video",
+    "generated_at": "2026-10-29T09:27:55.608680+00:00",
+    "global_model_enriched": true,
+    "step_1_global_genes": {
+      "duration": "15.042s",
+      "content_type": "oral_delivery",
+      "overall_rhythm": "单镜头静态口播，时长约15秒，语速稳定。",
+      "visual_style": "室内药房背景，中景居中构图，眼平机位，静态镜头，主持人白色短袖上衣，手持产品展示。",
+      "lighting": "bright, indoor studio lighting（明亮室内灯光）。",
+      "color_system": "绿色产品包装、白色上衣、药房药架背景，整体明亮室内色调。",
+      "core_copy": "",
+      "bgm_and_sfx": "未完成独立音频分析",
+      "hook_scenes": [
+        1
+      ],
+      "viral_score": 75.0,
+      "story_summary": "女主持人在药房背景前向镜头介绍一款绿色包装的奥利司他胶囊，说明其非处方药、抑制脂肪吸收、每日三次饭前服用等产品信息，并展示产品包装。"
+    },
+    "step_2_core_visual_elements": {
+      "people": [
+        "女主持人"
+      ],
+      "products_props": [
+        "奥利司他胶囊"
+      ],
+      "environment": [
+        "药房背景",
+        "药架背景",
+        "室内"
+      ]
+    },
+    "step_3_shot_breakdown": [
+      {
+        "shot_index": 1,
+        "start_us": 0,
+        "end_us": 15041667,
+        "duration_us": 15041667,
+        "start": "0.000s",
+        "end": "15.042s",
+        "duration": "15.042s",
+        "analysis_status": "completed",
+        "model_id": 31,
+        "fallback_used": true,
+        "content": "一位女主持人站在药房背景前，双手拿着一款绿色包装的奥利司他胶囊，向镜头介绍产品并展示包装特写。",
+        "cinematography": "中景，居中构图，眼平机位，静态镜头，明亮室内灯光。",
+        "action": [
+          "拿产品",
+          "介绍产品",
+          "微笑",
+          "指向产品包装"
+        ],
+        "emotion": [
+          "自信",
+          "热情",
+          "专业"
+        ],
+        "clothing": [
+          "白色短袖上衣"
+        ],
+        "environment": [
+          "药房",
+          "药架背景"
+        ],
+        "lighting": "bright, indoor studio lighting",
+        "scene_category": "oral_delivery",
+        "dialogue": "",
+        "dialogue_source": "unavailable",
+        "inferred": true,
+        "transcription_status": "not_requested",
+        "transcription_error": "",
+        "captions": [],
+        "replaceable": false,
+        "replace_score": 0.1,
+        "replacement_type": "不可替换",
+        "replace_reason": "该镜头为标准人物口播讲解画面，包含主持人介绍产品和展示产品的动作与语音同步，属于核心口播内容，不可替换。",
+        "hook_score": 75.0,
+        "hook_reason": "主持人开场直接切入减肥痛点和有效产品，语速稳定，展示产品包装清晰，具有较好的吸引力。"
+      }
+    ],
+    "scene_captions": [
+      {
+        "scene_index": 1,
+        "start_us": 0,
+        "end_us": 15041667,
+        "full_text": "",
+        "items": []
+      }
+    ],
+    "step_4_prompt_configuration": {
+      "negative_prompt": "不得新增字幕、水印或无关人物物品",
+      "duration": "15.042s",
+      "aspect_ratio": "unknown",
+      "shots": [
+        {
+          "shot": "Shot 01",
+          "prompt": ""
+        }
+      ]
+    },
+    "production_actions": {
+      "replaceable_shots": [],
+      "manual_review_shots": [],
+      "transition_notes": []
+    },
+    "timings": {
+      "detect_and_split_seconds": 0.0,
+      "scenes": [
+        {
+          "scene_index": 1,
+          "model_seconds": 18.5,
+          "model_attempts": 2
+        }
+      ],
+      "global_model_seconds": 97.39,
+      "total_seconds": 115.906
+    },
+    "fallbacks": [
+      {
+        "purpose": "scene",
+        "scene_index": 1,
+        "from_model_id": 41,
+        "to_model_id": 31,
+        "reason": "HTTPError",
+        "succeeded": true
+      },
+      {
+        "purpose": "global",
+        "from_model_id": 16,
+        "to_model_id": 13,
+        "reason": "HTTPError",
+        "succeeded": true
+      }
+    ],
+    "global_model_used_id": 13
+  },
+  "draft": {},
+  "warnings": []
+}

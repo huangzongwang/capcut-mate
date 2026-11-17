@@ -1,0 +1,17 @@
+{
+  "model_id": 41,
+  "model": "gemini-3.5-flash-lite",
+  "protocol": "chat",
+  "endpoint": "https://api.zetarouter.com/v1/chat/completions",
+  "video": "reports\\grok-video\\gv_20261027_033545_e0412bb0.mp4",
+  "video_bytes": 3577700,
+  "input_method": "complete_mp4_base64_no_client_frame_extraction",
+  "status_code": 503,
+  "response": {
+    "error": {
+      "message": "All available accounts exhausted",
+      "type": "server_error"
+    }
+  },
+  "elapsed_seconds": 9.203
+}

@@ -1,0 +1,14 @@
+*.pyc
+.venv
+./dist
+/.qoder
+/output
+/temp
+/logs
+/models/whisper
+/db
+/.pytest_cache
+/__pycache__
+/env.db.dev
+/models/faster-whisper-large-v3/
+/models/whisper-windows/

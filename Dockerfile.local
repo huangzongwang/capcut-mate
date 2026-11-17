@@ -1,0 +1,34 @@
+FROM gogoshine/capcut-mate:latest
+
+# FastAPI needs this parser for multipart upload endpoints.
+RUN uv pip install --python /app/.venv/bin/python "python-multipart>=0.0.20"
+
+# Keep scene-detection dependencies separate from the API's uv-managed environment.
+RUN /usr/local/bin/python -m venv /opt/scenedetect \
+    && /opt/scenedetect/bin/pip install --no-cache-dir scenedetect-headless==0.7.1 \
+    && /opt/scenedetect/bin/scenedetect version
+
+ENV PATH="${PATH}:/opt/scenedetect/bin"
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends ffmpeg \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN /opt/scenedetect/bin/pip install --index-url https://pypi.org/simple \
+    --default-timeout=300 --retries 10 --no-deps nvidia-cublas-cu12==12.9.2.10
+
+RUN /opt/scenedetect/bin/pip install --index-url https://pypi.org/simple \
+    --default-timeout=300 --retries 10 --no-deps nvidia-cudnn-cu12==9.26.0.51
+
+RUN /opt/scenedetect/bin/pip install --index-url https://pypi.org/simple \
+    --default-timeout=300 --retries 10 faster-whisper==1.2.0 requests==2.32.5
+
+# PP-OCRv5 mobile models for Chinese subtitle and price OCR.
+RUN /opt/scenedetect/bin/pip install --index-url https://pypi.org/simple \
+    --default-timeout=300 --retries 10 paddlepaddle==3.0.0 paddleocr
+
+ENV LD_LIBRARY_PATH="/opt/scenedetect/lib/python3.11/site-packages/nvidia/cublas/lib:/opt/scenedetect/lib/python3.11/site-packages/nvidia/cudnn/lib:${LD_LIBRARY_PATH}"
+
+# Ship local API changes as well as the extra detection runtime.
+COPY src/ /app/src/
+COPY main.py exceptions.py /app/

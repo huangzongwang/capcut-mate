@@ -1,0 +1,38 @@
+{
+  "model_id": 31,
+  "model": "gemini-2.5-flash-lite",
+  "protocol": "native",
+  "endpoint": "https://api.zetarouter.com/v1beta/models/gemini-2.5-flash-lite:generateContent",
+  "video": "reports\\grok-video\\gv_20261027_033545_e0412bb0.mp4",
+  "video_bytes": 3577700,
+  "input_method": "complete_mp4_base64_no_client_frame_extraction",
+  "status_code": 200,
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "thought": true,
+              "text": ""
+            },
+            {
+              "text": "- **Visible subjects**: A woman holding a box of weight loss capsules (Orlistat Capsules).\n- **Setting**: A pharmacy or store with shelves of products in the background.\n- **Actions in time order**:\n  - 00:00 - 00:05: The woman introduces the weight loss product while holding the box.\n  - 00:05 - 00:10: A close-up shot of the box highlights details like the product name and packaging design.\n  - 00:10 - 00:15: The woman explains how to use the product and invites viewers to consult for more information.\n- **Camera changes**: Cut from a medium shot of the woman to a close-up of the product box, then back to the medium shot.\n- **Visible text**: \"奥利司他胶囊\" (Orlistat Capsules), \"Celacee\", \"OTC\".\n- **Audio description**: A woman speaking in Mandarin, introducing the weight loss product, its mechanism, and usage instructions.\n- **Uncertainties**: None.",
+              "thoughtSignature": "EmcKZQFpFH0Tyqh3umc7RanOG5b3ZWTgZYsuD89Ax0LsJZ1EMGXzojMhDlYBmhuxOwFjZU4BieePu8FrHoTokvrIkJ5IsaC3+lJR0E3ERrjkNqgFFD342CxfzyDmOGpkkneJfSsZxs5u"
+            }
+          ]
+        },
+        "finishReason": "STOP"
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 1438,
+      "candidatesTokenCount": 236,
+      "totalTokenCount": 1674
+    },
+    "modelVersion": "gemini-2.5-flash-lite",
+    "responseId": "lQzjarFL0_vK0w_i0dHJBA"
+  },
+  "elapsed_seconds": 8.187
+}

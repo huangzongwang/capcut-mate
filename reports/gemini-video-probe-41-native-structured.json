@@ -1,0 +1,19 @@
+{
+  "model_id": 41,
+  "model": "gemini-3.5-flash-lite",
+  "protocol": "native",
+  "endpoint": "https://api.zetarouter.com/v1beta/models/gemini-3.5-flash-lite:generateContent",
+  "video": "reports\\grok-video\\gv_20261027_033545_e0412bb0.mp4",
+  "video_bytes": 3577700,
+  "input_method": "complete_mp4_base64_no_client_frame_extraction",
+  "json_output_requested": true,
+  "status_code": 502,
+  "response": {
+    "error": {
+      "code": 502,
+      "message": "Upstream service temporarily unavailable",
+      "status": "INTERNAL"
+    }
+  },
+  "elapsed_seconds": 9.687
+}

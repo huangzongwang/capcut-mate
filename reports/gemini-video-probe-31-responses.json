@@ -1,0 +1,38 @@
+{
+  "model_id": 31,
+  "model": "gemini-2.5-flash-lite",
+  "protocol": "responses",
+  "endpoint": "https://api.zetarouter.com/responses",
+  "video": "reports\\grok-video\\gv_20261027_033545_e0412bb0.mp4",
+  "video_bytes": 3577700,
+  "input_method": "complete_mp4_base64_no_client_frame_extraction",
+  "json_output_requested": false,
+  "status_code": 200,
+  "response": {
+    "id": "chatcmpl-202610290906515441146288268d9d6ORvkwM9g",
+    "object": "response",
+    "created_at": 1793264812,
+    "model": "gemini-2.5-flash-lite",
+    "status": "completed",
+    "output": [
+      {
+        "type": "message",
+        "id": "item_b34cb3392472f83c9b80c4ec",
+        "role": "assistant",
+        "content": [
+          {
+            "type": "output_text",
+            "text": "```json\n{\n  \"visible_subjects\": null,\n  \"setting\": null,\n  \"actions_in_time_order\": null,\n  \"camera_changes\": null,\n  \"visible_text\": null,\n  \"audio_description\": null,\n  \"uncertainties\": [\n    \"The video is inaccessible as no file or video stream was provided in the prompt.\"\n  ]\n}\n```"
+          }
+        ],
+        "status": "completed"
+      }
+    ],
+    "usage": {
+      "input_tokens": 72,
+      "output_tokens": 93,
+      "total_tokens": 165
+    }
+  },
+  "elapsed_seconds": 3.844
+}

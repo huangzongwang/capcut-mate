@@ -1,0 +1,40 @@
+{
+  "model_id": 31,
+  "model": "gemini-2.5-flash-lite",
+  "protocol": "native",
+  "endpoint": "https://api.zetarouter.com/v1beta/models/gemini-2.5-flash-lite:generateContent",
+  "video": "reports\\grok-video\\gv_20261027_033545_e0412bb0.mp4",
+  "video_bytes": 3577700,
+  "input_method": "complete_mp4_base64_no_client_frame_extraction",
+  "json_output_requested": true,
+  "status_code": 200,
+  "response": {
+    "candidates": [
+      {
+        "content": {
+          "role": "model",
+          "parts": [
+            {
+              "thought": true,
+              "text": ""
+            },
+            {
+              "text": "- **Visible Subjects**: A young woman with black hair, wearing a white shirt, holding a green and white box of weight loss capsules (Orlistat Capsules).\n- **Setting**: An indoor pharmacy or health store, with shelves stocked with health products and medicines in the background.\n- **Actions in Time Order**:\n  - 00:00 - 00:05: The woman stands in front of the camera, holding the product box with both hands, introducing a weight loss product.\n  - 00:05 - 00:10: A close-up shot of the product box, pointing out the green color and the product name \"Orlistat Capsules\".\n  - 00:10 - 00:15: The woman returns to the medium shot, explaining how to use the product and inviting viewers to consult.\n- **Camera Changes**: A medium shot of the woman speaking, followed by a close-up shot of the product box, then returning to the medium shot.\n- **Visible Text**: \"赛乐爽\", \"奥利司他胶囊\", \"Orlistat 抑制脂肪吸收 Capsules\", \"1粒/板\", \"OTC\".\n- **Audio Description**: A female voice speaking in Mandarin, introducing the weight loss product, its mechanism (inhibiting fat absorption), and usage instructions (three times a day before meals).\n- **Uncertainties**: None.",
+              "thoughtSignature": "EmcKZQFpFH0Tr4QaU4Un0RGisfcOsevyWfHCaszyxdBTyCpFnwH1Nwm2pMZ8VX5gYw026h+3Nenw8lhrAdbuvjjIb8S5iZvW7MwE08C9gPB+TMzCP33iuhgf+5Pco7yqPisctLS8n87Q"
+            }
+          ]
+        },
+        "finishReason": "STOP"
+      }
+    ],
+    "usageMetadata": {
+      "promptTokenCount": 1438,
+      "candidatesTokenCount": 302,
+      "totalTokenCount": 1740
+    },
+    "modelVersion": "gemini-2.5-flash-lite",
+    "responseId": "rgzjaq_bM9yEuMYPmYK-eA"
+  },
+  "valid_model_json": false,
+  "elapsed_seconds": 7.532
+}

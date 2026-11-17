@@ -1,0 +1,83 @@
+{
+  "model_id": 31,
+  "model": "gemini-2.5-flash-lite",
+  "video": "reports\\grok-video\\gv_20261027_033545_e0412bb0.mp4",
+  "production_scene": true,
+  "success": true,
+  "result": {
+    "model_id": null,
+    "fallback_used": false,
+    "analysis_status": "completed",
+    "analysis_source": "video_model",
+    "content": "一位年轻女主持人站在药房背景前，双手拿着“赛乐赛”奥利司他胶囊产品向镜头展示并进行口播介绍，中间包含产品包装特写镜头。",
+    "hook_score": 75.0,
+    "hook_reason": "开头直接切入痛点和减肥产品介绍，主播形象专业、笑容亲切，能有效吸引有减肥需求的目标观众。",
+    "transition_type": "opening",
+    "transition_reason": "视频的第一个分镜，无上一镜，作为开场。",
+    "continuity_score": null,
+    "scene_index": 1,
+    "scene_category": "oral_delivery",
+    "people": [
+      "女主持人"
+    ],
+    "products": [
+      "赛乐赛奥利司他胶囊"
+    ],
+    "scene_type": "室内",
+    "shot_type": "中景切换特写",
+    "camera_motion": "固定镜头结合推镜头特写",
+    "ocr_text": [],
+    "semantic_confidence": 0.98,
+    "replaceable": false,
+    "replace_reason": "该分镜为主播近景口播介绍产品，包含人物出镜讲解与真人手持产品细节，默认不可替换。",
+    "replace_score": 0.1,
+    "replacement_type": "none",
+    "actions": [
+      "站立",
+      "手持产品",
+      "讲解",
+      "微笑",
+      "指向产品包装"
+    ],
+    "emotions": [
+      "自信",
+      "热情",
+      "专业"
+    ],
+    "clothing": [
+      "白色短袖衬衫"
+    ],
+    "environment": [
+      "药房货架背景",
+      "药店环境"
+    ],
+    "lighting": "明亮均匀的室内棚拍光",
+    "composition": "中心构图",
+    "camera_angle": "正面平视",
+    "dialogue": "大家好，今天我要给大家介绍一款非常有效的减肥产品，它是一种非处方药，通过抑制脂肪吸收来帮助减肥。看这包装采用绿色设计，中间是产品名称，制式代表它能帮您轻松减重。使用方法很简单，每天三次，饭前服用，想了解更多欢迎咨询，谢谢。",
+    "dialogue_inferred": false
+  },
+  "elapsed_seconds": 8.703,
+  "calls": [
+    {
+      "call_id": "efb457388c54496e8e55f92a14028f53",
+      "model_id": 31,
+      "provider_id": 10,
+      "model": "gemini-2.5-flash-lite",
+      "task_id": null,
+      "purpose": "scene",
+      "operation": "scene",
+      "scene_index": 1,
+      "protocol": "gemini",
+      "attempt": 1,
+      "outcome": "completed",
+      "usage": {
+        "promptTokenCount": 1841,
+        "candidatesTokenCount": 485,
+        "totalTokenCount": 2326
+      },
+      "response_id": "sBDjaorNDu6gytMP3t6p0AE",
+      "seconds": 8.703
+    }
+  ]
+}

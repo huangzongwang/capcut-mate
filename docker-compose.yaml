@@ -1,0 +1,83 @@
+services:
+  capcut-mate:
+    init: true
+    image: capcut-mate-local:scenedetect-0.7.1-upload-route
+    build:
+      context: .
+      dockerfile: Dockerfile.routefix
+    platform: linux/amd64
+    ports:
+      - "30000:30000"
+    volumes:
+      - ./html/output:/app/output
+      - ./logs:/app/logs
+      - ./media:/app/media:rw
+      - ./output/scene-clips:/app/scene-clips
+      - ./db:/app/db
+      - ./reports:/app/reports
+      - ./models/whisper:/models/whisper
+      # - /etc/localtime:/etc/localtime:ro
+      # - /etc/timezone:/etc/timezone:ro
+    environment:
+      # 草稿下载URL
+      - DRAFT_URL=http://127.0.0.1/openapi/capcut-mate/v1/get_draft
+      # 用于将容器内部的文件路径转成URL，本质是将/app/替换成DOWNLOAD_URL得到下载路径
+      - DOWNLOAD_URL=http://127.0.0.1/
+      # 草稿提示URL
+      - TIP_URL=https://docs.jcaigc.cn
+      # 文件下载大小限制（字节），默认200MB（209715200）
+      - DOWNLOAD_FILE_SIZE_LIMIT=209715200
+      # 草稿清理策略（本模块内定义；保留数量可由环境变量 DRAFT_CLEANUP_MAX_DRAFT_COUNT 覆盖，默认 1000）
+      - DRAFT_CLEANUP_MAX_DRAFT_COUNT=6000
+      # 远程媒体 URL 直写模式：false=下载到本地（默认）；true=草稿仅写入 URL，不下载
+      - USE_REMOTE_MEDIA_URL=false      
+      - SCENE_MEDIA_ROOT=/app/media
+      # Explicit trusted origins only; include :port when present in URLs.
+      - SCENE_ALLOWED_MEDIA_HOSTS=nginx
+      - SCENE_TIMEOUT_SECONDS=180
+      - SCENE_SPLIT_ROOT=/app/scene-clips
+      - SCENE_SPLIT_TIMEOUT_SECONDS=900
+      # Leave time for the worker to report a media-command timeout before its 900s hard limit.
+      - SCENE_MEDIA_COMMAND_TIMEOUT_SECONDS=840
+      - SCENE_TRANSCRIBE_TIMEOUT_SECONDS=1800
+      # 全局模型断线/无响应时最多等待 180 秒，避免单并发分析队列长期阻塞。
+      - SCENE_GLOBAL_MODEL_TIMEOUT_SECONDS=180
+      # 逐镜云端分析并发数；默认 2，过高容易触发供应商 429。
+      - SCENE_MODEL_CONCURRENCY=2
+      - SCENE_SPLIT_MAX_BYTES=1073741824
+      - SCENE_EXPORT_BATCH_SIZE=4
+      - SCENE_FFMPEG_THREADS=2
+      - NVIDIA_DRIVER_CAPABILITIES=compute,video,utility
+      - HF_ENDPOINT=https://hf-mirror.com
+    gpus: all
+    networks:
+      - capcut-mate-network
+    mem_limit: 4G
+    memswap_limit: 4G
+    cpus: '4'
+    oom_score_adj: -500
+    restart: unless-stopped
+    container_name: capcut-mate
+  
+  nginx: # nginx服务器
+    image: nginx:alpine
+    platform: linux/amd64
+    ports:
+      - "80:80"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./html/output:/usr/share/nginx/html/output:ro
+      - ./media:/usr/share/nginx/html/media:ro
+      - ./config/nginx.local.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - capcut-mate-network
+    mem_limit: 1G
+    memswap_limit: 1G
+    cpus: '1.0'
+    oom_score_adj: -500
+    restart: unless-stopped
+    container_name: nginx
+
+networks:
+  capcut-mate-network:
+    driver: bridge
